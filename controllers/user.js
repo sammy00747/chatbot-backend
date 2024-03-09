@@ -23,7 +23,7 @@ var login = (req,res) => {
                 token: jwt.sign({
                     username: req.body.username,
                     timestamp: Date.now()
-                },constants.secretToken,{algorithm:"HS384"})
+                },process.env.secretToken,{algorithm:"HS384"})
             });
         });
     }

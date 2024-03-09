@@ -5,7 +5,7 @@ const db = require('../services/db');
 
 var auth = (req,res,next) => {
     try {
-        let obj = jwt.verify(req.headers["x-api-key"],constants.secretToken,{algorithms:["HS384"]});
+        let obj = jwt.verify(req.headers["x-api-key"],process.env.secretToken,{algorithms:["HS384"]});
         req.loggedInUser = {...obj};
         next();
     }

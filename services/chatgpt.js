@@ -1,11 +1,11 @@
 const OpenAI = require("openai");
-const constants = require("../constants");
+
 
 let openai = null;
 
 let main = () => {
     try {
-        openai = new OpenAI({apiKey:constants.OPENAI_SECRET_KEY});
+        openai = new OpenAI({apiKey:process.env.OPENAI_API_KEY});
         console.log("ChatGPT init done!");
     }
     catch(e) {
